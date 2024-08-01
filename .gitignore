@@ -8,8 +8,6 @@ __pycache__/
 *.log
 *.sqlite3
 db.sqlite3
-media/
-staticfiles/
 *.pot
 *.mo
 
@@ -33,7 +31,3 @@ venv.bak/
 # OS-specific files
 .DS_Store
 Thumbs.db
-
-# Static and media files
-/static/
-/media/
