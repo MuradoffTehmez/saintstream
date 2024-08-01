@@ -32,3 +32,5 @@ SaintStream, modern bir film ve dizi akış platformudur. Kullanıcılar film ve
 1. **Proje Bağımlılıklarını Kurun**
 
    <!-- pip install -r requirements.txt -->
+
+salam
