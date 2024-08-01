@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Kullanıcı Değerlendirmeleri</h2>
+<ul>
+    {% for review in reviews %}
+    <li>
+        <strong>{{ review.movie.title }}</strong>
+        <p>Rating: {{ review.rating }}</p>
+        <p>{{ review.review_text }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

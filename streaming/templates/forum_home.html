@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Forum</h2>
+<ul>
+    {% for thread in threads %}
+    <li>
+        <a href="{% url 'forum_thread' thread.id %}">{{ thread.title }}</a> - {{ thread.author.username }} ({{ thread.created_at }})
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

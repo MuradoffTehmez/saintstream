@@ -1,0 +1,15 @@
+<!-- streaming/templates/recommendations.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Recommended Movies</h1>
+{% for movie in movies %}
+    <div>
+        <h3><a href="{% url 'movie_detail' movie.id %}">{{ movie.title }}</a></h3>
+        <img src="{{ movie.poster.url }}" alt="{{ movie.title }}">
+    </div>
+{% empty %}
+    <p>No recommendations available.</p>
+{% endfor %}
+{% endblock %}

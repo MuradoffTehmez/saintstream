@@ -1,0 +1,27 @@
+<!-- streaming/templates/discussion.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ thread.title }}</h1>
+<p>{{ thread.content }}</p>
+
+<h2>Posts</h2>
+{% for post in posts %}
+    <div>
+        <p>{{ post.author.username }}: {{ post.content }}</p>
+        <p>Posted on: {{ post.created_at }}</p>
+    </div>
+{% empty %}
+    <p>No posts yet.</p>
+{% endfor %}
+
+{% if user.is_authenticated %}
+    <h3>Write a Post</h3>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="content" rows="4" class="form-control" placeholder="Write your post..."></textarea>
+        <button type="submit">Submit</button>
+    </form>
+{% endif %}
+{% endblock %}

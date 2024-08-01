@@ -1,0 +1,17 @@
+<!-- streaming/templates/subscription_plans.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Subscription Plans</h1>
+{% for plan in plans %}
+    <div>
+        <h2>{{ plan.name }}</h2>
+        <p>Price: ${{ plan.price }}</p>
+        <p>Duration: {{ plan.duration }} days</p>
+        <p>Features: {{ plan.features }}</p>
+    </div>
+{% empty %}
+    <p>No subscription plans available.</p>
+{% endfor %}
+{% endblock %}

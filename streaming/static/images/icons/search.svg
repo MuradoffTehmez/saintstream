@@ -1,0 +1,5 @@
+<!-- search.svg -->
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2" fill="none" />
+    <line x1="16" y1="16" x2="22" y2="22" stroke="currentColor" stroke-width="2" />
+</svg>

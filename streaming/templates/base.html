@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SaintStream{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/main.js' %}" defer></script>
+    <script src="{% static 'js/theme-switcher.js' %}" defer></script>
+</head>
+<body class="light-mode">
+    <header>
+        <div class="container">
+            <h1><a href="{% url 'home' %}">SaintStream</a></h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}"><svg><!-- SVG Home Icon --></svg> Home</a></li>
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'forum_home' %}">Forum</a></li>
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                    <li><a href="{% url 'about_us' %}">About Us</a></li>
+                    <li><a href="{% url 'search' %}"><svg><!-- SVG Search Icon --></svg> Search</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    <li><a href="{% url 'signup' %}">Signup</a></li>
+                    {% endif %}
+                </ul>
+                <div class="language-selector">
+                    <label for="language-select">Language:</label>
+                    <select id="language-select" onchange="changeLanguage(this.value)">
+                        <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+                        <option value="es" {% if LANGUAGE_CODE == 'es' %}selected{% endif %}>Español</option>
+                        <option value="fr" {% if LANGUAGE_CODE == 'fr' %}selected{% endif %}>Français</option>
+                        <option value="de" {% if LANGUAGE_CODE == 'de' %}selected{% endif %}>Deutsch</option>
+                        <option value="tr" {% if LANGUAGE_CODE == 'tr' %}selected{% endif %}>Türkçe</option>
+                    </select>
+                </div>
+                <button id="modeSwitcher" class="mode-switcher" onclick="toggleTheme()">
+                    <svg><!-- SVG Theme Icon --></svg> Switch to Dark Mode
+                </button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 SaintStream. All rights reserved.</p>
+        <p><a href="{% url 'help_support' %}">Help & Support</a></p>
+    </footer>
+    <script>
+        function changeLanguage(language) {
+            const url = `{% url 'set_language' %}?language=${language}`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

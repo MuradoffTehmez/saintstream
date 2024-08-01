@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="profile-section">
+        <h2>Profil Bilgileri</h2>
+        <div class="card">
+            <h3>Your Information</h3>
+            <p>Kullanıcı Adı: {{ user.username }}</p>
+            <p>E-posta: {{ user.email }}</p>
+            <p>Üyelik Tarihi: {{ user.date_joined }}</p>
+            <a href="{% url 'profile_edit' %}">Profilini Düzenle</a>
+        </div>
+        <div class="card">
+            <h3>Watch History</h3>
+            <!-- Watch History -->
+        </div>
+    </section>
+{% endblock %}

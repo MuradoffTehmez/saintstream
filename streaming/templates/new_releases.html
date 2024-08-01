@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}New Releases{% endblock %}
+
+{% block content %}
+<h2>New Releases</h2>
+<ul>
+    {% for movie in movies %}
+        <li>{{ movie.title }} - {{ movie.release_date }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

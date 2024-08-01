@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+    <section class="login-container">
+        <div class="login-header">
+            <div class="logo-container">
+                <div class="logo-part-1"></div>
+                <div class="logo-part-2"></div>
+            </div>
+            <div class="login-title">Login to your account</div>
+            <div class="close-button">
+                <div class="close-button-text">Close</div>
+            </div>
+        </div>
+        <form method="post" action="{% url 'login' %}" class="login-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" name="username" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" name="password" class="form-input" required>
+            </div>
+            <button type="submit" class="submit-button">Login</button>
+        </form>
+        <div class="forgot-password">
+            <span class="forgot-password-text">Forgot password</span>
+        </div>
+        <div class="signup-prompt">
+            <span class="signup-text">Don’t have an account? </span>
+            <span class="signup-link">Sign up</span>
+        </div>
+    </section>
+{% endblock %}

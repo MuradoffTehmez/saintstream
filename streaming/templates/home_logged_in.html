@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Welcome back, {{ user.username }}</h2>
+
+    <h3>Recommended for You</h3>
+    <ul>
+        {% for movie in recommended_movies %}
+            <li>{{ movie.title }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Movies</h3>
+    <ul>
+        {% for movie in movies %}
+            <li>{{ movie.title }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Series</h3>
+    <ul>
+        {% for series in series %}
+            <li>{{ series.title }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

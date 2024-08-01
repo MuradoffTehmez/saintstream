@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ thread.title }}</h2>
+<p>Başlatan: {{ thread.author.username }} ({{ thread.created_at }})</p>
+
+{% for post in posts %}
+    <div>
+        <strong>{{ post.author.username }}</strong> ({{ post.created_at }}):
+        <p>{{ post.content }}</p>
+    </div>
+{% endfor %}
+
+<form method="post">
+    {% csrf_token %}
+    <textarea name="content" rows="4" required></textarea>
+    <button type="submit">Gönder</button>
+</form>
+{% endblock %}

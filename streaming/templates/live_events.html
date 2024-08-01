@@ -1,0 +1,17 @@
+<!-- streaming/templates/live_events.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Live Events</h1>
+{% for event in events %}
+    <div>
+        <h2>{{ event.title }}</h2>
+        <img src="{{ event.image.url }}" alt="{{ event.title }}">
+        <p>{{ event.description }}</p>
+        <p>Date: {{ event.event_date }}</p>
+    </div>
+{% empty %}
+    <p>No live events available.</p>
+{% endfor %}
+{% endblock %}

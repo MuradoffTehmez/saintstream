@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}Forum Created{% endblock %}
+
+{% block content %}
+<h2>Forum Created Successfully!</h2>
+<p>Your forum has been created. You can now <a href="{% url 'forum_home' %}">view it</a>.</p>
+{% endblock %}

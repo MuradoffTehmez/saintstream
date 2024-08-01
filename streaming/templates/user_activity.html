@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Aktivite Geçmişi</h2>
+<ul>
+    {% for activity in activities %}
+    <li>
+        <strong>{{ activity.movie.title }}</strong>
+        <p>Rating: {{ activity.rating }}</p>
+        <p>{{ activity.review_text }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

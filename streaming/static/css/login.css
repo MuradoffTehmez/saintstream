@@ -1,0 +1,154 @@
+body {
+    font-family: Rubik, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+    background: #0D0C0F;
+    border-radius: 24px;
+    border: 1px solid #28262D;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.login-header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.logo-part-1 {
+    width: 32px;
+    height: 32px;
+    position: relative;
+}
+
+.logo-part-1::before {
+    content: '';
+    width: 27.20px;
+    height: 30.40px;
+    background: #00925D;
+    position: absolute;
+    left: 29.60px;
+    top: 0.80px;
+    transform: rotate(180deg);
+    transform-origin: 0 0;
+}
+
+.logo-part-1::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: white;
+    position: absolute;
+    left: 8px;
+    top: 6.40px;
+}
+
+.logo-part-2 {
+    width: 117.62px;
+    height: 22px;
+    background: white;
+}
+
+.login-title {
+    color: #9CA4AB;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.close-button {
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-button-text {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.form-input {
+    height: 52px;
+    padding: 16px;
+    background: #08080A;
+    border-radius: 8px;
+    border: 1px solid #28262D;
+    color: #3E3C43;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.submit-button {
+    height: 46px;
+    border-radius: 10px;
+    background: #28262D;
+    border: none;
+    color: #3E3C43;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forgot-password {
+    text-align: center;
+}
+
+.forgot-password-text {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.signup-prompt {
+    text-align: center;
+}
+
+.signup-text {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.signup-link {
+    color: #00925D;
+    font-size: 14px;
+    font-weight: 700;
+}

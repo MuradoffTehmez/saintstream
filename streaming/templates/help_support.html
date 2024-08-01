@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Yardım ve Destek</h2>
+<p>SSS ve canlı destek için buraya bakabilirsiniz.</p>
+
+<p>Yardım ve destek almak için aşağıdaki bağlantılara göz atabilirsiniz:</p>
+<ul>
+    <li><a href="{% url 'contact' %}">İletişim</a></li>
+    <li><a href="{% url 'faq' %}">SSS</a></li>
+    <li><a href="{% url 'support_tickets' %}">Destek Biletleri</a></li>
+</ul>
+{% endblock %}

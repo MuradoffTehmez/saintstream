@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="search-section">
+        <h2>Search</h2>
+        <!-- A Form -->
+        <form method="get" action="{% url 'search' %}" class="search-form">
+            <div class="search-bar">
+                <input type="text" name="q" placeholder="Search for movies or series..." value="{{ request.GET.q }}">
+                <button type="submit">Search</button>
+            </div>
+        </form>
+
+        
+        <h2>Movies</h2>
+        {% if movies %}
+            {% for movie in movies %}
+                <div class="search-result-item">
+                    <h3><a href="{% url 'movie_detail' movie.id %}">{{ movie.title }}</a></h3>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No movies found.</p>
+        {% endif %}
+
+        <h2>Series</h2>
+        {% if series %}
+            {% for serie in series %}
+                <div class="search-result-item">
+                    <h3><a href="{% url 'series_detail' serie.id %}">{{ serie.title }}</a></h3>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No series found.</p>
+        {% endif %}
+    </section>
+{% endblock %}

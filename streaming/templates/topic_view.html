@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ topic.title }}</h2>
+<p>{{ topic.description }}</p>
+
+<h3>Yorumlar</h3>
+<ul>
+    {% for comment in comments %}
+    <li><strong>{{ comment.user.username }}:</strong> {{ comment.content }}</li>
+    {% endfor %}
+</ul>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Yorum Yap</button>
+</form>
+{% endblock %}

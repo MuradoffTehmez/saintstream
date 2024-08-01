@@ -1,0 +1,383 @@
+/* Genel Stiller */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    background-image: url('path/to/background-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* High Contrast Mode */
+body.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+body.high-contrast .card,
+body.high-contrast .forum-post,
+body.high-contrast .blog-post,
+body.high-contrast .live-event,
+body.high-contrast .watchlist {
+    background-color: #222;
+    color: #fff;
+}
+
+body.high-contrast a {
+    color: #ff0;
+}
+
+/* Header */
+header {
+    background: var(--header-background);
+    color: var(--header-text-color);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Header Başlığı */
+header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Header Linkleri */
+header a {
+    color: inherit;
+    text-decoration: none;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+}
+
+header a:hover {
+    transform: scale(1.1);
+    color: var(--link-hover-color);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Mode Switcher */
+header .mode-switcher {
+    background: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s, border-radius 0.3s;
+}
+
+header .mode-switcher:hover {
+    background: var(--button-hover-background);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+/* Ana İçerik */
+main {
+    padding-top: 70px;
+    /* Header'ın yüksekliğini hesaba kat */
+}
+
+/* Footer */
+footer {
+    background: var(--footer-background);
+    color: var(--footer-text-color);
+    padding: 15px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Footer Linkleri */
+footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--link-hover-color);
+}
+
+/* Kartlar */
+.card {
+    background: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin: 15px 0;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    animation: cardFadeIn 1s ease-out;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.card:hover {
+    background: var(--card-hover-background);
+    transform: scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Formlar */
+form {
+    background: var(--form-background);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin: 15px 0;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--button-background);
+    box-shadow: 0 0 8px rgba(26, 115, 232, 0.5);
+}
+
+form button {
+    background: var(--button-background);
+    color: var(--button-text);
+    border: 2px solid var(--button-background);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+form button:hover {
+    background: var(--button-hover-background);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-color: var(--button-hover-background);
+}
+
+/* Arama Barı */
+.search-bar {
+    background: var(--search-background);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.search-bar input[type="text"] {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: var(--button-background);
+    box-shadow: 0 0 8px rgba(26, 115, 232, 0.5);
+}
+
+.search-bar button {
+    background: var(--button-background);
+    color: var(--button-text);
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.search-bar button:hover {
+    background: var(--button-hover-background);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Forum ve Tartışma Alanları */
+.forum-post {
+    background: var(--forum-background);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 15px 0;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.forum-post h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.forum-post p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Blog ve Haberler */
+.blog-post {
+    background: var(--blog-background);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 15px 0;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.blog-post h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.blog-post p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Canlı Etkinlikler */
+.live-event {
+    background: var(--event-background);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 15px 0;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.live-event h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.live-event p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* İzleme Listesi */
+.watchlist {
+    background: var(--watchlist-background);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 15px 0;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.watchlist h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.watchlist p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .card,
+    .forum-post,
+    .blog-post,
+    .live-event,
+    .watchlist {
+        margin: 10px 0;
+        padding: 15px;
+    }
+
+    .search-bar input[type="text"],
+    .search-bar button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

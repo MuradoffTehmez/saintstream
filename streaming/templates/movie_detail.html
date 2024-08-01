@@ -1,0 +1,30 @@
+<!-- streaming/templates/movie_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ movie.title }}</h1>
+<img src="{{ movie.poster.url }}" alt="{{ movie.title }}">
+<p>{{ movie.description }}</p>
+<p>Average Rating: {{ movie.average_rating }}</p>
+
+<h2>Reviews</h2>
+{% for review in reviews %}
+    <div>
+        <p>{{ review.user.username }} - Rating: {{ review.rating }}</p>
+        <p>{{ review.comment }}</p>
+        <p>Posted on: {{ review.created_at }}</p>
+    </div>
+{% empty %}
+    <p>No reviews yet.</p>
+{% endfor %}
+
+{% if user.is_authenticated %}
+    <h3>Leave a Review</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+{% endif %}
+{% endblock %}
