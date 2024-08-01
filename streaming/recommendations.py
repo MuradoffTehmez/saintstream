@@ -1,5 +1,3 @@
-# streaming/recommendations.py
-
 from django.db.models import Count, Q
 from .models import UserProfile, Movie, Review
 from collections import defaultdict

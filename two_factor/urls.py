@@ -1,4 +1,3 @@
-# two_factor/urls.py
 from django.urls import path
 from . import views  # adjust the import according to your views
 

@@ -19,18 +19,8 @@ SaintStream, modern bir film ve dizi akış platformudur. Kullanıcılar film ve
 - **Veritabanı**: SQLite
 - **Kütüphaneler**: Django REST framework, WebSocket, Chart.js, OAuth 2.0, ve daha fazlası.
 
-## Kurulum
-
-### Gereksinimler
+## Gereksinimler
 
 - Python 3.8 veya üstü
 - Django 4.1 veya üstü
 - Pip
-
-### Kurulum Adımları
-
-1. **Proje Bağımlılıklarını Kurun**
-
-   <!-- pip install -r requirements.txt -->
-
-salam

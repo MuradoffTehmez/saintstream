@@ -1,4 +1,3 @@
-/* Genel Stiller */
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -6,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
-    background-image: url('path/to/background-image.jpg');
+    background-image: url('saintstream\streaming\static\images\home.png');
     background-size: cover;
     background-position: center;
 }
@@ -106,7 +105,6 @@ header .mode-switcher:hover {
 /* Ana İçerik */
 main {
     padding-top: 70px;
-    /* Header'ın yüksekliğini hesaba kat */
 }
 
 /* Footer */
